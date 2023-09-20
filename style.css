@@ -1,0 +1,13 @@
+body {
+    flex: auto;
+    justify-content: center;
+    padding: 20%;
+}
+
+.weather {
+    color: rgb(5, 63, 90);
+    font-size: larger;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(88, 88, 98);
+}
