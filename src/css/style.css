@@ -4444,3 +4444,18 @@ td, th {
     bottom: 1rem;
   }
 }
+
+#searchResults {
+  color:#245bbb; 
+  text-align: center; 
+  font-size: 15px;
+}
+
+#searchhistheader 
+{
+  color:#0e9cac; 
+  text-align: center; 
+  padding: 5%;
+  padding-bottom: 2%;
+  font-size: 25px;
+}

@@ -43,14 +43,27 @@ function getApi(e) {
         .then(function (response) {
           return response.json();
         })
+      
         .then(function (data) {
-          console.log(data)
-          const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || []
-          searchedCitiesArr.push(inputValue)
-          const removeDuplicates = [...new Set(searchedCitiesArr)]
+          console.log(data);
+          const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || [];
+          searchedCitiesArr.push(inputValue);
+
+          const removeDuplicates = [...new Set(searchedCitiesArr)];
+
           localStorage.setItem("searchedCities", JSON.stringify(removeDuplicates));
-        });
+
+          const resultsHistDisplay = document.getElementById('searchResults');
+          
+          if (removeDuplicates.length > 0 ) {
+            resultsHistDisplay.textContent = removeDuplicates.join(', ');
+          } else {
+            resultsHistDisplay.textContent = 'No previous searches';
+          }
+          
+        }); 
+
     });
-}
+};
 
 formEl.addEventListener('submit', getApi);
