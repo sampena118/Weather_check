@@ -35,7 +35,14 @@
           <div class="bg-neutral-10 dark:bg-neutral-900 p-6 md:p-8 border border-gray-200 dark:border-gray-700 rounded-2xl">
             <div class="flex flex-wrap gap-4 md:gap-8">
               <div class="flex flex-wrap flex-col w-full md:w-[360px] gap-6">
-                <p class="text-sm tracking-[0.1px] mb-3">Insert  Latitude and Longitude (Decimal degree) e.g: q=48.8567,2.3508 city name e.g.: q=Paris US zip e.g.: q=10001 UK postcode e.g: q=SW1 Canada postal code e.g: q=G2J metar: e.g: q=metar:EGLL iata: 3 digit airport code e.g: q=iata:DXB auto:ip IP lookup e.g: q=auto:ip IP address (IPv4 and IPv6 supported) e.g: q=100.0.0.1</p>
+                <p class="text-sm tracking-[0.1px] mb-3">
+                  <ul id="lists">
+                    <li>Enter the Latitude and Longitude (Decimal degree), for example: 48.8567,2.3508</li>
+                    <li>Type in the name of a city, for example: Paris </li>
+                    <li>Enter Zip code, for example: 10001 </li>
+                    <li>Even a 3 digit airport code, for example: iata:DXB </li>
+                  </ul>
+                </p>
 
                 <div class="relative z-0 input-filled">
                   <div class="absolute left-4 top-4 z-10">
@@ -44,7 +51,7 @@
                   <form id="form">
                     <input type="search" aria-label="inputtext" name="inputtext" id="inputss" class="w-full h-14 block leading-5 relative pt-2 pl-14 pr-4 rounded-t text-gray-800 bg-gray-100 dark:bg-gray-700 border-b focus:border-b-2 border-gray-500 dark:border-gray-400 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:focus:border-primary-200 peer" placeholder=" " value="">
                     <label for="inputss" class="absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3.5 scale-75 top-4 z-10 origin-[0] left-14 peer-focus:left-14 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3.5 peer-invalid:text-error-600 dark:peer-invalid:text-error-200">Search</label>
-                    <button type="submit" id="searchBtn">Search</button>
+                      <button type="submit" id="searchBtn">Submit</button>
                   </form>
                 </div>
               </div>             
