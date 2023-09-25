@@ -32,6 +32,7 @@ function getApi(e) {
       cityname.appendChild(displayname);
 
       const temp = document.getElementById('temp');
+<<<<<<< Updated upstream
       const displaytemp = document.createTextNode(data.current.temp_f)
       temp.appendChild(displaytemp);
 
@@ -45,6 +46,25 @@ function getApi(e) {
 
       const condition = document.getElementById('condition');
       const displaycondition = document.createTextNode(data.current.condition.text)
+=======
+      const displaytemp = document.createTextNode("Temperature: "+data.current.temp_f+" F")
+      temp.innerHTML = ''
+      temp.appendChild(displaytemp);
+
+      const wind = document.getElementById('wind');
+      const displaywind = document.createTextNode("Windspeed: "+data.current.wind_mph+" MPH")
+      wind.innerHTML = ''
+      wind.appendChild(displaywind);
+
+      const wind_dir = document.getElementById('wind_dir');
+      const displaywind_dir = document.createTextNode("Wind Direction: "+data.current.wind_dir)
+      wind_dir.innerHTML = ''
+      wind_dir.appendChild(displaywind_dir);
+
+      const condition = document.getElementById('condition');
+      const displaycondition = document.createTextNode("Current Condition: "+data.current.condition.text)
+      condition.innerHTML = ''
+>>>>>>> Stashed changes
       condition.appendChild(displaycondition);
 
       const last_updated = document.getElementById('last_updated');
