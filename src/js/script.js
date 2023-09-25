@@ -46,6 +46,32 @@ function getApi(e) {
       
         .then(function (data) {
           console.log(data);
+
+          const image = document.createElement('img');
+
+          image.setAttribute(
+            'src',
+            data.result.webcams[0].image.current.preview,
+          );
+
+          image.setAttribute('alt', 'Webcam Image');
+          image.setAttribute('height', 350); // 👈️ height in px
+          image.setAttribute('width', 550); // 👈️ width in px
+
+          image.onerror = function handleError() {
+            console.log('Image could not be loaded');
+
+            // 👇️ Or hide image
+            // image.style.display = 'none';
+          };
+
+          image.onload = function handleImageLoaded() {
+            console.log('image loaded successfully');
+          };
+
+          const FirstImage = document.getElementById('FirstImage');
+          FirstImage.appendChild(image);
+          
           const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || [];
           searchedCitiesArr.push(inputValue);
 
