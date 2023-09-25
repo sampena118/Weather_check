@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title  -->
-  <title>Tailmater | Tailwind Material 3 UI</title>
+  <title>Current Weather Finder</title>
 
   <!-- Development css (used in all pages) -->
   <link rel="stylesheet" id="stylesheet" href="src/css/style.css">
@@ -30,8 +30,7 @@
       
 
     <div class="flex flex-wrap w-full flex-col gap-8 md:p-10 bg-surface-100 dark:bg-surfacedark-100  rounded-2xl">
-         <div class="flex flex-col gap-2">
-          <h2 class="text-xl leading-tight">Location</h2>
+         <div class="flex flex-col gap-2" >
           <div class="bg-neutral-10 dark:bg-neutral-900 p-6 md:p-8 border border-gray-200 dark:border-gray-700 rounded-2xl">
             <div class="flex flex-wrap gap-4 md:gap-8">
               <div class="flex flex-wrap flex-col w-full md:w-[360px] gap-6">
@@ -75,7 +74,7 @@
               
               
               <div>
-                <p class="text-sm tracking-[0.1px] mb-3 mt-3 md:mt-0">Location Pics</p>
+                <p class="text-sm tracking-[0.1px] mb-3 mt-3 md:mt-0"id="city"/p>
                 <div class="w-full p-4 bg-neutral-10 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-gray-700">
                   <!-- Lists -->
                   <div class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900">
@@ -85,10 +84,13 @@
                  
                       </div>
                       <div class="flex flex-col flex-grow">
-                        <p class="tracking-[.03125em]">Blah Blah locale</p>
-                        <span class="text-sm tracking-[0.25px]">specific adress</span>
+                        <p class="tracking-[.03125em]"id="temp">Temperature F </p>
+                        <span class="text-sm tracking-[0.25px]"id="wind">Wind in MPH </span>
+                        <p class="tracking-[.03125em]"id="wind_dir">Wind Direction </p>
+                        <span class="text-[11px] leading-4 tracking-[.045em] font-large"id="condition">Conditions are </span>
+                        <p class="text-[11px] leading-4 tracking-[.045em] font-large"id="last_updated">Last checked </p>
                       </div>
-                      <span class="text-[11px] leading-4 tracking-[.045em] font-medium">time of last photo</span>
+                      
                     </div>
 
                   
