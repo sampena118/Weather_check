@@ -26,6 +26,30 @@ function getApi(e) {
       console.log(data)
       console.log(data.location.lat)
       console.log(data.location.lon)
+      
+      const cityname = document.getElementById('city');
+      const displayname = document.createTextNode(data.location.name)
+      cityname.appendChild(displayname);
+
+      const temp = document.getElementById('temp');
+      const displaytemp = document.createTextNode(data.current.temp_f)
+      temp.appendChild(displaytemp);
+
+      const wind = document.getElementById('wind');
+      const displaywind = document.createTextNode(data.current.wind_mph)
+      wind.appendChild(displaywind);
+
+      const wind_dir = document.getElementById('wind_dir');
+      const displaywind_dir = document.createTextNode(data.current.wind_dir)
+      wind_dir.appendChild(displaywind_dir);
+
+      const condition = document.getElementById('condition');
+      const displaycondition = document.createTextNode(data.current.condition.text)
+      condition.appendChild(displaycondition);
+
+      const last_updated = document.getElementById('last_updated');
+      const displaylast_updated = document.createTextNode(data.current.last_updated)
+      last_updated.appendChild(displaylast_updated);
 
       const lat = data.location.lat
       const lon = data.location.lon
@@ -46,6 +70,32 @@ function getApi(e) {
       
         .then(function (data) {
           console.log(data);
+
+          const image = document.createElement('img');
+
+          image.setAttribute(
+            'src',
+            data.result.webcams[0].image.current.preview,
+          );
+
+          image.setAttribute('alt', 'Webcam Image');
+          image.setAttribute('height', 350); // 👈️ height in px
+          image.setAttribute('width', 550); // 👈️ width in px
+
+          image.onerror = function handleError() {
+            console.log('Image could not be loaded');
+
+            // 👇️ Or hide image
+            // image.style.display = 'none';
+          };
+
+          image.onload = function handleImageLoaded() {
+            console.log('image loaded successfully');
+          };
+
+          const FirstImage = document.getElementById('FirstImage');
+          FirstImage.appendChild(image);
+          
           const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || [];
           searchedCitiesArr.push(inputValue);
 
