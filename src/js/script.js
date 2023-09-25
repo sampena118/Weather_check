@@ -29,24 +29,11 @@ function getApi(e) {
       
       const cityname = document.getElementById('city');
       const displayname = document.createTextNode(data.location.name)
+
+      cityname.innerHTML = ''
       cityname.appendChild(displayname);
 
-      const temp = document.getElementById('temp');
-<<<<<<< Updated upstream
-      const displaytemp = document.createTextNode(data.current.temp_f)
-      temp.appendChild(displaytemp);
-
-      const wind = document.getElementById('wind');
-      const displaywind = document.createTextNode(data.current.wind_mph)
-      wind.appendChild(displaywind);
-
-      const wind_dir = document.getElementById('wind_dir');
-      const displaywind_dir = document.createTextNode(data.current.wind_dir)
-      wind_dir.appendChild(displaywind_dir);
-
-      const condition = document.getElementById('condition');
-      const displaycondition = document.createTextNode(data.current.condition.text)
-=======
+     const temp = document.getElementById('temp');
       const displaytemp = document.createTextNode("Temperature: "+data.current.temp_f+" F")
       temp.innerHTML = ''
       temp.appendChild(displaytemp);
@@ -64,12 +51,13 @@ function getApi(e) {
       const condition = document.getElementById('condition');
       const displaycondition = document.createTextNode("Current Condition: "+data.current.condition.text)
       condition.innerHTML = ''
->>>>>>> Stashed changes
       condition.appendChild(displaycondition);
 
       const last_updated = document.getElementById('last_updated');
-      const displaylast_updated = document.createTextNode(data.current.last_updated)
+      const displaylast_updated = document.createTextNode("Last updated "+data.current.last_updated)
+      last_updated.innerHTML = ''
       last_updated.appendChild(displaylast_updated);
+
 
       const lat = data.location.lat
       const lon = data.location.lon
@@ -113,7 +101,9 @@ function getApi(e) {
             console.log('image loaded successfully');
           };
 
+
           const FirstImage = document.getElementById('FirstImage');
+          FirstImage.innerHTML = '';
           FirstImage.appendChild(image);
           
           const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || [];
