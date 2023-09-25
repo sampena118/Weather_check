@@ -29,6 +29,7 @@ function getApi(e) {
       
       const cityname = document.getElementById('city');
       const displayname = document.createTextNode(data.location.name)
+
       cityname.innerHTML = ''
       cityname.appendChild(displayname);
 
