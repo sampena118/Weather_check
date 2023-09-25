@@ -29,26 +29,33 @@ function getApi(e) {
       
       const cityname = document.getElementById('city');
       const displayname = document.createTextNode(data.location.name)
+
+      cityname.innerHTML = ''
       cityname.appendChild(displayname);
 
       const temp = document.getElementById('temp');
-      const displaytemp = document.createTextNode(data.current.temp_f)
+      const displaytemp = document.createTextNode("Temp in F "+data.current.temp_f)
+      temp.innerHTML = ''
       temp.appendChild(displaytemp);
 
       const wind = document.getElementById('wind');
-      const displaywind = document.createTextNode(data.current.wind_mph)
+      const displaywind = document.createTextNode("Windspeed MPH "+data.current.wind_mph)
+      wind.innerHTML = ''
       wind.appendChild(displaywind);
 
       const wind_dir = document.getElementById('wind_dir');
-      const displaywind_dir = document.createTextNode(data.current.wind_dir)
+      const displaywind_dir = document.createTextNode("Wind Direction "+data.current.wind_dir)
+      wind_dir.innerHTML = ''
       wind_dir.appendChild(displaywind_dir);
 
       const condition = document.getElementById('condition');
-      const displaycondition = document.createTextNode(data.current.condition.text)
+      const displaycondition = document.createTextNode("Current Condition "+data.current.condition.text)
+      condition.innerHTML = ''
       condition.appendChild(displaycondition);
 
       const last_updated = document.getElementById('last_updated');
-      const displaylast_updated = document.createTextNode(data.current.last_updated)
+      const displaylast_updated = document.createTextNode("Last updated "+data.current.last_updated)
+      last_updated.innerHTML = ''
       last_updated.appendChild(displaylast_updated);
 
       const lat = data.location.lat
@@ -93,7 +100,9 @@ function getApi(e) {
             console.log('image loaded successfully');
           };
 
+
           const FirstImage = document.getElementById('FirstImage');
+          FirstImage.innerHTML = '';
           FirstImage.appendChild(image);
           
           const searchedCitiesArr = JSON.parse(localStorage.getItem("searchedCities")) || [];
